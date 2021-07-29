@@ -1,8 +1,8 @@
 class CommonitySchema < GraphQL::Schema
+  use GraphQL::Subscriptions::ActionCableSubscriptions, redis: Redis.new
   mutation(Types::MutationType)
   query(Types::QueryType)
-
-  use GraphQL::Subscriptions::ApplicationCableSubscriptions
+  subscription(Types::SubscriptionType)
 
   # Union and Interface Resolution
   def self.resolve_type(abstract_type, obj, ctx)

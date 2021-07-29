@@ -14,5 +14,10 @@ module Types
     field :create_channel, mutation: Mutations::Channels::CreateChannel
     field :update_channel, mutation: Mutations::Channels::UpdateChannel
     field :delete_channel, mutation: Mutations::Channels::DeleteChannel
+
+    # messages
+    field :create_message, mutation: Mutations::Messages::CreateMessage
+    field :update_message, mutation: Mutations::Messages::UpdateMessage
+    field :delete_message, mutation: Mutations::Messages::DeleteMessage
   end
 end

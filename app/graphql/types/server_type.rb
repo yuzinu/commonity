@@ -1,8 +1,8 @@
 module Types
   class ServerType < Types::BaseObject
     field :id, ID, null: false
-    field :name, String, null: false
     field :owner_id, ID, null: false
+    field :name, String, null: false
     
     field :owner, Types::UserType, null: false
     field :channels, [Types::ChannelType], null: false

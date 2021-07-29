@@ -15,5 +15,9 @@ module Types
     # channels
     field :channels, resolver: Queries::Channels::Channels
     field :channel, resolver: Queries::Channels::Channel
+
+    # messages
+    field :messages, resolver: Queries::Messages::Messages
+    field :message, resolver: Queries::Messages::Message
   end
 end
