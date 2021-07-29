@@ -4,12 +4,16 @@ module Types
     include GraphQL::Types::Relay::HasNodeField
     include GraphQL::Types::Relay::HasNodesField
 
-    # /users
+    # users
     field :users, resolver: Queries::Users::Users
     field :user, resolver: Queries::Users::User
     
-    # /servers
+    # servers
     field :servers, resolver: Queries::Servers::Servers
     field :server, resolver: Queries::Servers::Server
+
+    # channels
+    field :channels, resolver: Queries::Channels::Channels
+    field :channel, resolver: Queries::Channels::Channel
   end
 end
