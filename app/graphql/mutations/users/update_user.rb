@@ -13,7 +13,7 @@ module Mutations
           user.username = username unless username.nil?
           user.email = email unless email.nil?
         end
-        return user if user.save
+        return user if user.save!
       end
     end
   end

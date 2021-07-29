@@ -4,7 +4,6 @@ module Queries
       type [Types::UserType], null: false
 
       def resolve
-        puts ::User.superclass
         ::User.all
       end
     end

@@ -4,23 +4,10 @@ module Mutations
       argument :username, String, required: true
       argument :email, String, required: true
       
-      field :user, Types::UserType, null: false
-      field :errors, [String], null: false
+      type Types::UserType
 
       def resolve(username:, email:)
-        user = User.new(username: username, email: email)
-
-        if user.save
-          {
-            user: user,
-            errors: []
-          }
-        else
-          {
-            user: nil,
-            errors: user.errors.full_messages
-          }
-        end
+        User.create!(username: username, email: email)
       end
     end
   end
