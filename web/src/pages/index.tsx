@@ -1,9 +1,12 @@
+import { Users } from '../components/Users'
+import { User } from '../components/User'
 import { DarkModeSwitch } from '../components/DarkModeSwitch'
 
 const Index = () => (
   <>
     <DarkModeSwitch />
-    <h1>Hello World</h1>
+    <Users />
+    <User />
   </>
 )
 
