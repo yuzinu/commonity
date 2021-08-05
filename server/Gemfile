@@ -14,14 +14,16 @@ gem 'puma', '~> 5.0'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.16'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-gem 'graphql'
-gem 'graphql-ruby'
-gem 'graphql-batch'
+gem 'graphql', '~> 1.12.14'
+gem 'graphql-ruby', '~> 9001.0'
+gem 'graphql-batch', '~> 0.4.3'
+
+gem 'devise', '~> 4.8.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -35,8 +37,8 @@ group :development, :test do
 end
 
 group :development do
-  gem 'graphiql-rails'
-  gem 'faker'
+  gem 'graphiql-rails', '~> 1.7.0'
+  gem 'faker', '~> 2.18.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
