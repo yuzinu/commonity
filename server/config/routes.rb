@@ -1,7 +1,10 @@
-Rails.application.routes.draw do
-  devise_for :users
+Rails.application.routes.draw do  
+  devise_for :users, skip: :sessions
+  
   if Rails.env.development?
+    # authenticate :user do
     mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "graphql#execute"
+    # end
   end
 
   mount ActionCable.server, at: '/cable'
