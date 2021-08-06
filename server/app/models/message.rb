@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Message < ApplicationRecord
   after_create :notify_subscriber_of_addition
   after_update :notify_subscriber_of_update

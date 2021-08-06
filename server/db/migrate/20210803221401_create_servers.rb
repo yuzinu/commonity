@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CreateServers < ActiveRecord::Migration[6.1]
   def change
     create_table :servers do |t|

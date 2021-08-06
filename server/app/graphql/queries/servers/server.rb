@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Queries
   module Servers
     class Server < Queries::BaseQuery

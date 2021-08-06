@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Mutations
   module Channels
     class CreateChannel < Mutations::BaseMutation

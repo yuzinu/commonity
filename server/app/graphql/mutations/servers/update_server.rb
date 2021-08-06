@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Mutations
   module Servers
     class UpdateServer < Mutations::BaseMutation

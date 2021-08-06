@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Channel < ApplicationRecord
   validates :name, :server_id, presence: true
 
