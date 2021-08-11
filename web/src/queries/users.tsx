@@ -1,21 +1,34 @@
 import { gql } from '@apollo/client'
+import { initializeApollo } from '../../apollo/apolloClient';
 
-export const GET_USERS = gql`
-  query GetUsers {
-    users {
-      id
-      username
-      email
-    }
-  }
-`;
+export async function getUsers() {
+  const data = await initializeApollo().query({
+    query: gql`
+      query GetUsers {
+        users {
+          id
+          username
+          email
+        }
+      }
+    `
+  })
 
-export const GET_USER = gql`
-  query GetUser($id: ID!) {
-    user(id: $id) {
-      id
-      username
-      email
-    }
-  }
-`;
+  return {...data}
+}
+export async function getUser(id) {
+  const data = await initializeApollo().query({
+    query: gql`
+     query GetUser($id: ID!) {
+        user(id: $id) {
+          id
+          username
+          email
+        }
+      }
+    `,
+    variables: { id }
+  })
+
+  return {...data}
+}

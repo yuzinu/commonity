@@ -2,37 +2,18 @@ import { useQuery } from "@apollo/client"
 import { initializeApollo } from "../../apollo/apolloClient";
 import { List, ListItem, Text } from "@chakra-ui/react"
 import { GET_USERS } from "../queries/users";
+import Link from 'next/link'
+import styles from './Users.module.css'
 
-export const Users = () => {
-  const { loading, error, data } = useQuery(GET_USERS);
-
-  if (loading) return <Text>'Loading...'</Text>;
-  if (error) return <Text>`Error! ${error.message}`</Text>;
-
+export const Users = (props) => {
   return (
     <>
       <Text>All Users</Text>
-      {data.users.map(user => (
-        <List key={user.id}>
-          <ListItem>User: {user.id}</ListItem>
-          <ListItem>username: {user.username}</ListItem>
-          <ListItem>email: {user.email}</ListItem>
-        </List>
+      {props?.props.users.data.users.map(user => (
+        <div key={user.id} className={styles.link}>
+          <Link href={`/user/${user.id}`}><a >{user.username}</a></Link >
+        </div>
       ))}
     </>
   )
-}
-
-export const getStaticProps = async () => {
-  const client = initializeApollo();
-  
-  const data = await client.query({
-    query: GET_USERS,
-  });
-
-  return {
-    props: {
-      users: data.users
-    }
-  }
 }
